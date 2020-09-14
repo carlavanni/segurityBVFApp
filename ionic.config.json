@@ -1,5 +1,7 @@
 {
   "name": "segurityBVFApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
