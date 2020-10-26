@@ -85,4 +85,9 @@ this.presentAlert('ERRO', 'Formulario invalido, confira os campos!');
     await alert.present();
   }
 
+  async presentEsqueceu(titulo: string, mensagem: string) { 
+    this.presentAlert('ENTRE EM CONTATO:', ' Telefone: (14)3115-2665 <br> OU VÁ ATÉ NOSSA CENTRAL!')
+  
+  }
+
 }

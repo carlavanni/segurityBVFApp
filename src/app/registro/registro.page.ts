@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { CpfValidator } from '../validators/cpf-validator';
+
 import { ComparacaoValidator } from '../validators/comparacao-validator';
 import { UsuariosService } from '../services/usuarios.service';
 import { AlertController } from '@ionic/angular';
@@ -21,24 +21,11 @@ export class RegistroPage implements OnInit {
       {tipo: 'required', mensagem: 'O campo nome é obrigatório!'},
       {tipo: 'minlength', mensagem: 'O nome deve ter pelo menos 3 caracteres!'}
     ],
-    CPF: [
-      {tipo: 'required', mensagem: 'O campo CPF é obrigatório!'},
-      {tipo: 'minlength', mensagem: 'O CPF deve ter pelo menos 11 caracteres!'},
-      {tipo: 'maxlength', mensagem: 'O CPF deve ter no máximo 14 caracteres!'},
-{tipo: 'invalido', mensagem: 'CPF inválido!'}
+  
+    codigo: [
+      {tipo: 'required', mensagem: 'O campo codigo é obrigatório!'},
+      {tipo: 'minlength', mensagem: 'O código deve ter pelo menos 3 caracteres!'}
     ],
-    celular: [
-         
-          {tipo: 'maxlength', mensagem: 'O campo celular deve ter no máximo 16 caracteres!'}
-        ],
-        dataNascimento: [
-          {tipo: 'required', mensagem: 'O campo data de nascimento é obrigatório!'}
-
-        ],
-
-        genero: [
-          {tipo: 'required', mensagem: 'O campo genero é obrigatório!'}
-        ],
         
    email: [
           {tipo: 'required', mensagem: 'O campo e-mail é obrigatório!'},
@@ -62,12 +49,7 @@ export class RegistroPage implements OnInit {
     ) {
     this.formRegistro = formBuilder.group({
       nome: ['', Validators.compose([Validators.required, Validators.minLength(3) ])],
-      CPF: ['', Validators.compose([Validators.required, Validators.minLength(11), 
-        Validators.maxLength(14), CpfValidator.cpfValido])],
-
-      celular: ['', Validators.compose([Validators.required, Validators.maxLength(16) ])],
-      dataNascimento: ['', Validators.compose([Validators.required])],
-      genero: ['', Validators.compose([Validators.required])],
+      codigo: ['', Validators.compose([Validators.required, Validators.minLength(3) ])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
       senha: ['', Validators.compose([Validators.required, Validators.minLength(6) ])],
       confirmarsenha: ['', Validators.compose([Validators.required, Validators.minLength(6) ])],
@@ -87,10 +69,7 @@ export class RegistroPage implements OnInit {
 
       let usuario = new Usuario();
       usuario.nome = this.formRegistro.value.nome;
-      usuario.cpf = this.formRegistro.value.cpf;
-      usuario.dataNascimento = new Date( this.formRegistro.value.dataNascimento);
-      usuario.genero = this.formRegistro.value.genero;
-      usuario.celular = this.formRegistro.value.celular;
+      usuario.codigo = this.formRegistro.value.codigo;
       usuario.email = this.formRegistro.value.email;
       usuario. senha= this.formRegistro.value.senha;
 

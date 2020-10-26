@@ -5,7 +5,7 @@
 
   <form [formGroup]="formLogin">
   <ion-card>
-    <ion-item class="ion-text-center text-bold line-bottom" Lines="none"> 
+    <ion-item color= "secondary" class="ion-text-center text-bold line-bottom" Lines="none"> 
       <ion-label>
         Digite seu E-mail e Senha 
       </ion-label>
@@ -41,8 +41,11 @@
   </ion-card>
 
   <ion-card>
-    <ion-button expand="block" (click)="login()">ENTRAR</ion-button>
+    <ion-button color = "dark" expand="block" (click)="login()">ENTRAR</ion-button>
     <ion-button routerLink="/registro" expand="block" fill="outline" color = "dark ">REGISTRAR</ion-button>
   </ion-card>
+
+  <ion-button color="light" expand="block" (click)= "presentEsqueceu()">ESQUECEU SEU EMAIL OU SENHA?</ion-button>
+
   </form>
 </ion-content>

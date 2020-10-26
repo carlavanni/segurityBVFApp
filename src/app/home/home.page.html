@@ -1,20 +1,57 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
     <ion-title>
-      Blank
+      Histórico
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink = "/configuracoes">
+        <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button (click) = "exibirAlertLogout()">
+        <ion-icon slot="icon-only" name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+
+   <ion-card>
+    <ion-card-header>
+      <ion-icon class= "iconeusuario" name="person-outline"></ion-icon> 
+      
+       <ion-card-title class="lado">{{cliente.nome}}</ion-card-title>
+
+
+      <ion-card-subtitle class="lado">{{endereco.endereco}}</ion-card-subtitle>
+   
+    </ion-card-header>
+  </ion-card>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>Data</ion-col>
+        <ion-col>Hora</ion-col>
+      </ion-row>
+      <div *ngFor="let item of lista">
+        <ion-row>
+          <ion-col>{​​​​​{​​​​​ alt.data }​​​​​}​​​​​</ion-col>
+          <ion-col>{​​​​​{​​​​​ alt.hora }​​​​​}​​​​​</ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
 </ion-content>
+
+

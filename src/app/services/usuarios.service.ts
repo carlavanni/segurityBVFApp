@@ -14,7 +14,7 @@ export class UsuariosService {
   public async buscarTodos(){
     this.listaUsuarios = await this.armazenamentoService.pegarDados('usuarios');
 
-    if(this.listaUsuarios){
+    if(!this.listaUsuarios){
       this.listaUsuarios = [];
     }
 
@@ -54,5 +54,10 @@ export class UsuariosService {
 
   public async buscarUsuarioLogado(){
  return await this.armazenamentoService.pegarDados('usuarioLogado');
+  }
+
+  public async removerUsuarioLogado(){
+    return await this.armazenamentoService.removerDados('usuarioLogado')
+
   }
 }
