@@ -26,7 +26,7 @@ export class RegistroPage implements OnInit {
       {tipo: 'required', mensagem: 'O campo codigo é obrigatório!'},
       {tipo: 'minlength', mensagem: 'O código deve ter pelo menos 3 caracteres!'}
     ],
-        
+
    email: [
           {tipo: 'required', mensagem: 'O campo e-mail é obrigatório!'},
           {tipo: 'email', mensagem: 'E-mail inválido!'}
@@ -69,6 +69,7 @@ export class RegistroPage implements OnInit {
 
       let usuario = new Usuario();
       usuario.nome = this.formRegistro.value.nome;
+      usuario.categoria = this.formRegistro.value.categoria;
       usuario.codigo = this.formRegistro.value.codigo;
       usuario.email = this.formRegistro.value.email;
       usuario. senha= this.formRegistro.value.senha;

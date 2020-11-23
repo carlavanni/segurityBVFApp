@@ -41,16 +41,16 @@
           </ng-container>
         </ion-item>
     
-          </ion-select>
-          <ng-container *ngFor="let erro of mensagens_validacao.categoria">
-            <span class="msg-erro"
-              *ngIf="formRegistro.get('categoria').hasError(erro.tipo) && (formRegistro.get('categoria').dirty || formRegistro.get('categoria').touched)">
-              {{erro.mensagem}}
-    
-            </span>
-    
-          </ng-container>
-        </ion-item>
+      
+        
+          <ion-item>
+            <ion-label>Categoria</ion-label>
+            <ion-select placeholder="Selecione:">
+              <ion-select-option value="f">Funcionario</ion-select-option>
+              <ion-select-option value="m">Administrador</ion-select-option>
+            </ion-select>
+          </ion-item>
+      
     
         <ion-item lines="none">
           <ion-label position="stacked">E-mail</ion-label>
